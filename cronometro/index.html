@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronômetro Interativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Cronômetro Interativo</h1>
+
+    <div id="timer">
+      <h2 id="time-display">00:00</h2>
+      <div id="status">Pausado</div>
+    </div>
+
+    <div class="controls">
+      <button id="start-stop" onclick="startStopTimer()">Iniciar</button>
+      <button id="reset" onclick="resetTimer()">Reiniciar</button>
+    </div>
+
+    <audio id="alarm-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
