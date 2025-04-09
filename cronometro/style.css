@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Comic Sans', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .game-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #timer {
+    margin-bottom: 30px;
+  }
+  
+  #time-display {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff5722;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  #status {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #ff7e5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #feb47b;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    background-color: #ff5722;
+    transform: scale(0.95);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulseStatus {
+    0% {
+      color: #fff;
+    }
+    50% {
+      color: #ff5722;
+    }
+    100% {
+      color: #fff;
+    }
+  }
+  

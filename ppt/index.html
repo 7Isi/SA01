@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedra / Papel / Tesoura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <p>Pedra / Papel / Tesoura</p>
+
+  <div class="game-container">
+    
+    <div class="choices">
+      <button class="choice" onclick="play('pedra')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgHg53ls2b7VCc8NYFULqgEbEbvlnJI3rGnQ&s" alt="Pedra" />
+      </button>
+      <button class="choice" onclick="play('papel')">
+        <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" alt="Papel" />
+      </button>
+      <button class="choice" onclick="play('tesoura')">
+        <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" alt="Tesoura" />
+      </button>
+    </div>
+    
+    <div id="game-result">
+      <h2 id="result"></h2>
+      <p>Escolha do computador: <span id="computer-choice"></span></p>
+    </div>
+
+    <h3 id="score">Você: 0 | Computador: 0</h3>
+
+    <button class="reset-btn" onclick="resetGame()">Reiniciar Jogo</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

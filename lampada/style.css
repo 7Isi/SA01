@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .game-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 320px;
+    text-align: center;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #lamp {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  #lamp-img {
+    width: 120px;
+    height: 180px;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+  
+  .controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #ff7e5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #feb47b;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    background-color: #ff5722;
+    transform: scale(0.95);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  body.light-theme {
+    background: #f1f1f1;
+    color: #333;
+  }
+  
+  body.light-theme .game-container {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  body.light-theme #lamp-img {
+    filter: brightness(1.3);
+  }
+  
+  body.light-theme button {
+    background-color: #ff5722;
+  }
+  
+  body.light-theme button:hover {
+    background-color: #ff9800;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(-10deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes breakEffect {
+    0% {
+      opacity: 1;
+      transform: rotate(0);
+    }
+    25% {
+      opacity: 0.8;
+      transform: rotate(15deg);
+    }
+    50% {
+      opacity: 0.6;
+      transform: rotate(-15deg);
+    }
+    75% {
+      opacity: 0.4;
+      transform: rotate(10deg);
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(0);
+    }
+  }
+  
