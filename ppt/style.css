@@ -1,107 +1,156 @@
+/* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1663af, #c2e4d0);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.game-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 530px;
+  height: 580px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.score-container {
+  margin-bottom: 30px;
+}
+
+#score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.game-info {
+  margin-bottom: 20px;
+}
+
+#result {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #fff;
+}
+
+#computer-choice {
+  font-weight: 700;
+}
+
+.choices-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.choice-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.choice-btn img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.choice-btn:hover img {
+  transform: scale(1.2);
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #2244a4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #45c6c2db;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #223fff;
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: #c3ccc8bf;
+  cursor: not-allowed;
+}
+
+/* Efeito de brilho para a lâmpada */
+.lamp-on {
+  filter: brightness(1.5);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
   }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  50% {
+    opacity: 0.6;
   }
-  
-  .game-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  100% {
+    opacity: 1;
   }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 5px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Animação de vibração nos botões */
+@keyframes shake {
+  0% {
+    transform: rotate(-10deg);
   }
-  
-  .choices {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+  25% {
+    transform: rotate(10deg);
   }
-  
-  button.choice {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  50% {
+    transform: rotate(-10deg);
   }
-  
-  button.choice img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  75% {
+    transform: rotate(10deg);
   }
-  
-  button.choice:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  100% {
+    transform: rotate(0deg);
   }
-  
-  button.choice:active img {
-    transform: scale(0.95);
-  }
-  
-  #game-result {
-    margin-top: 20px;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  #computer-choice {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .reset-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    background: linear-gradient(135deg, #6e7dff, #3f51b5);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .reset-btn:hover {
-    background-color: #4c6ef5;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+}

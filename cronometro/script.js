@@ -1,61 +1,59 @@
+// Variáveis globais
 let timer;
-let minutes = 0;
 let seconds = 0;
 let isRunning = false;
-let isPaused = false;
+let laps = [];
 
-// Função para formatar o tempo em "mm:ss"
-function formatTime(mins, secs) {
-  return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-// Função para atualizar a tela com o tempo atual
-function updateDisplay() {
-  const timeDisplay = document.getElementById('time-display');
-  timeDisplay.textContent = formatTime(minutes, seconds);
-}
-
-// Função para iniciar ou pausar o cronômetro
+// Inicia ou pausa o cronômetro
 function startStopTimer() {
   if (isRunning) {
     clearInterval(timer);
-    document.getElementById('status').textContent = "Pausado";
-    isRunning = false;
-    document.getElementById('start-stop').textContent = "Iniciar";
+    document.getElementById("status").innerText = "Pausado";
   } else {
-    if (isPaused) {
-      // Retomar de onde parou
-      document.getElementById('status').textContent = "Em andamento";
-    } else {
-      minutes = 0;
-      seconds = 0;
-      updateDisplay();
-      document.getElementById('status').textContent = "Em andamento";
-    }
-
-    timer = setInterval(function() {
-      seconds++;
-      if (seconds === 60) {
-        seconds = 0;
-        minutes++;
-      }
-      updateDisplay();
-    }, 1000);
-
-    isRunning = true;
-    isPaused = false;
-    document.getElementById('start-stop').textContent = "Pausar";
+    timer = setInterval(updateTime, 1000);
+    document.getElementById("status").innerText = "Rodando";
   }
+  isRunning = !isRunning;
+  toggleButton();
 }
 
-// Função para reiniciar o cronômetro
+// Atualiza o cronômetro a cada segundo
+function updateTime() {
+  seconds++;
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  document.getElementById("time-display").innerText = `${formatTime(mins)}:${formatTime(secs)}`;
+}
+
+// Formata o tempo com 2 dígitos
+function formatTime(time) {
+  return time < 10 ? `0${time}` : time;
+}
+
+// Reinicia o cronômetro
 function resetTimer() {
   clearInterval(timer);
-  minutes = 0;
   seconds = 0;
+  document.getElementById("time-display").innerText = "00:00";
+  document.getElementById("status").innerText = "Pausado";
   isRunning = false;
-  isPaused = false;
-  updateDisplay();
-  document.getElementById('status').textContent = "Pausado";
-  document.getElementById('start-stop').textContent = "Iniciar";
+  toggleButton();
+  laps = [];
+  document.getElementById("lap-list").innerHTML = '';
+}
+
+// Alterna o texto do botão Iniciar/Pausar
+function toggleButton() {
+  const button = document.getElementById("start-stop");
+  button.innerText = isRunning ? "Pausar" : "Iniciar";
+}
+
+// Adiciona uma volta à lista
+function addLap() {
+  const lapTime = document.getElementById("time-display").innerText;
+  laps.push(lapTime);
+  const lapList = document.getElementById("lap-list");
+  const lapItem = document.createElement("li");
+  lapItem.innerText = `Volta ${laps.length}: ${lapTime}`;
+  lapList.appendChild(lapItem);
 }

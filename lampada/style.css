@@ -1,12 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   
   body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #657e5a, #feb47b);
     color: #fff;
     text-align: center;
     height: 100vh;
@@ -15,20 +13,30 @@
     align-items: center;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  footer {
+    padding: 20px;
+  }
+
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   
   .game-container {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    width: 320px;
+    width: 480px;
+    height: 470px;
     text-align: center;
-    position: relative;
   }
-  
+
   h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
@@ -39,8 +47,8 @@
   }
   
   #lamp-img {
-    width: 120px;
-    height: 180px;
+    width: 180px;
+    height: 240px;
     transition: filter 0.3s ease, transform 0.3s ease;
     margin-bottom: 20px;
     object-fit: contain;
@@ -56,7 +64,7 @@
   button {
     padding: 12px 20px;
     font-size: 1.2rem;
-    background-color: #ff7e5f;
+    background-color: #4fb73f;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -65,41 +73,21 @@
   }
   
   button:hover {
-    background-color: #feb47b;
+    background-color: #7dfe7b;
     transform: scale(1.1);
   }
   
   button:active {
-    background-color: #ff5722;
+    background-color: #8cd77f;
     transform: scale(0.95);
   }
   
   button:disabled {
-    background-color: #ccc;
+    background-color: #becfb99b;
     cursor: not-allowed;
   }
   
-  body.light-theme {
-    background: #f1f1f1;
-    color: #333;
-  }
-  
-  body.light-theme .game-container {
-    background: rgba(255, 255, 255, 0.8);
-  }
-  
-  body.light-theme #lamp-img {
-    filter: brightness(1.3);
-  }
-  
-  body.light-theme button {
-    background-color: #ff5722;
-  }
-  
-  body.light-theme button:hover {
-    background-color: #ff9800;
-  }
-  
+
   @keyframes shake {
     0% {
       transform: rotate(-10deg);

@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Codificação UTF-8 e responsividade -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da página -->
   <title>Cronômetro Interativo</title>
+  
+  <!-- Fonte Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilo CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>Cronômetro Interativo</h1>
+  <!-- Contêiner principal -->
+  <div class="container">
 
-    <div id="timer">
-      <h2 id="time-display">00:00</h2>
+      <!-- Título -->
+      <h1>Cronômetro Interativo</h1>
+    
+    <!-- Cronômetro e controles -->
+    <div class="timer-container">
+    
+      
+      <!-- Exibição do cronômetro -->
+      <div id="clock">
+        <h2 id="time-display">00:00</h2>
+      </div>
+
+      <!-- Status do cronômetro -->
       <div id="status">Pausado</div>
-    </div>
+      
+      <!-- Botões -->
+      <div class="controls">
+        <button id="start-stop" onclick="startStopTimer()">Iniciar</button>
+        <button id="reset" onclick="resetTimer()">Reiniciar</button>
+      </div>
 
-    <div class="controls">
-      <button id="start-stop" onclick="startStopTimer()">Iniciar</button>
-      <button id="reset" onclick="resetTimer()">Reiniciar</button>
+      <!-- Voltas -->
+      <div id="lap-container">
+        <button id="lap-btn" onclick="addLap()">Adicionar Volta</button>
+        <div id="lap-list"></div>
+      </div>
     </div>
-
-    <audio id="alarm-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
   </div>
 
+  <!-- Script JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
