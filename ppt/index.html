@@ -8,32 +8,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<section>
 
-    <p>Pedra / Papel / Tesoura</p>
-
+    <h1>Pedra / Papel / Tesoura</h1>
   <div class="game-container">
-    
-    <div class="choices">
-      <button class="choice" onclick="play('pedra')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgHg53ls2b7VCc8NYFULqgEbEbvlnJI3rGnQ&s" alt="Pedra" />
-      </button>
-      <button class="choice" onclick="play('papel')">
-        <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" alt="Papel" />
-      </button>
-      <button class="choice" onclick="play('tesoura')">
-        <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" alt="Tesoura" />
-      </button>
-    </div>
-    
-    <div id="game-result">
-      <h2 id="result"></h2>
-      <p>Escolha do computador: <span id="computer-choice"></span></p>
+
+    <!-- Placar -->
+    <div class="score-container">
+      <h2 id="score">Você: <span id="user-score">0</span> | Computador: <span id="computer-score">0</span></h2>
     </div>
 
-    <h3 id="score">Você: 0 | Computador: 0</h3>
+    <div class="game-info">
+      <h2 id="result">Faça sua escolha</h2>
+      <p>Escolha do computador: <span id="computer-choice">?</span></p>
+    </div>
 
-    <button class="reset-btn" onclick="resetGame()">Reiniciar Jogo</button>
+    <!-- Escolhas de Jogo -->
+    <div class="choices-container">
+      <div class="choice">
+        <button onclick="play('pedra')" class="choice-btn">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgHg53ls2b7VCc8NYFULqgEbEbvlnJI3rGnQ&s" alt="Pedra" />
+        </button>
+      </div>
+      <div class="choice">
+        <button onclick="play('papel')" class="choice-btn">
+          <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" alt="Papel" />
+        </button>
+      </div>
+      <div class="choice">
+        <button onclick="play('tesoura')" class="choice-btn">
+          <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" alt="Tesoura" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Botões de controle -->
+    <div class="game-buttons">
+      <button id="reset-btn" onclick="resetGame()" class="reset-btn">Reiniciar Jogo</button>
+    </div>
+
   </div>
+
+  <footer>
+    <a>Atividade Somativa 01 - Projeto Difício</a>
+  </footer>
+
+</section>
 
   <script src="script.js"></script>
 </body>
