@@ -1,143 +1,154 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #657e5a, #feb47b);
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+  box-sizing: border-box;
+}
 
-  footer {
-    padding: 20px;
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  .game-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    width: 480px;
-    height: 470px;
-    text-align: center;
-  }
+footer {
+  padding: 20px;
+}
 
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  #lamp {
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
-  }
-  
-  #lamp-img {
-    width: 180px;
-    height: 240px;
-    transition: filter 0.3s ease, transform 0.3s ease;
-    margin-bottom: 20px;
-    object-fit: contain;
-  }
-  
-  .controls {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  button {
-    padding: 12px 20px;
-    font-size: 1.2rem;
-    background-color: #4fb73f;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #7dfe7b;
-    transform: scale(1.1);
-  }
-  
-  button:active {
-    background-color: #8cd77f;
-    transform: scale(0.95);
-  }
-  
-  button:disabled {
-    background-color: #becfb99b;
-    cursor: not-allowed;
-  }
-  
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  @keyframes shake {
-    0% {
-      transform: rotate(-10deg);
-    }
-    25% {
-      transform: rotate(10deg);
-    }
-    50% {
-      transform: rotate(-10deg);
-    }
-    75% {
-      transform: rotate(10deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+.game-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Mais sombra para dar destaque */
+  width: 480px;
+  height: 470px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-size: 2.5rem; /* Aumentando o título */
+  margin-bottom: 40px;
+  color: #fff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Mais sombra no título */
+  font-family: 'Arial', sans-serif;
+}
+
+#lamp {
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+#lamp-img {
+  width: 180px;
+  height: 240px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #4fb73f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background-color: #7dfe7b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.6); /* Adicionando uma sombra legal ao passar o mouse */
+}
+
+button:active {
+  background-color: #8cd77f;
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: #becfb99b;
+  cursor: not-allowed;
+}
+
+button#replace-btn {
+  background-color: #f1c40f;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5); /* Sombra mais clara para destacar o botão "Trocar" */
+}
+
+button#replace-btn:hover {
+  background-color: #f39c12;
+  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.7);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-10deg);
   }
-  
-  @keyframes pulse {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.6;
-    }
-    100% {
-      opacity: 1;
-    }
+  25% {
+    transform: rotate(10deg);
   }
-  
-  @keyframes breakEffect {
-    0% {
-      opacity: 1;
-      transform: rotate(0);
-    }
-    25% {
-      opacity: 0.8;
-      transform: rotate(15deg);
-    }
-    50% {
-      opacity: 0.6;
-      transform: rotate(-15deg);
-    }
-    75% {
-      opacity: 0.4;
-      transform: rotate(10deg);
-    }
-    100% {
-      opacity: 0;
-      transform: rotate(0);
-    }
+  50% {
+    transform: rotate(-10deg);
   }
-  
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes breakEffect {
+  0% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  25% {
+    opacity: 0.8;
+    transform: rotate(15deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: rotate(-15deg);
+  }
+  75% {
+    opacity: 0.4;
+    transform: rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+}

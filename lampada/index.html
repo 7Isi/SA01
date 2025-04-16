@@ -10,28 +10,26 @@
 <body>
   
 <section>
-    <h1>LÂMPADA INTERATIVA</h1>
+  <h1>🕯️ LÂMPADA INTERATIVA 🕯️</h1>
 
   <div class="game-container">
-
     <div id="lamp">
-      <img id="lamp-img" src="https://img.icons8.com/ios/452/light-off.png" alt="Lâmpada" />
+      <img id="lamp-img" src="https://img.icons8.com/ios/452/light-off.png" alt="Lâmpada" onclick="clickLamp()" />
     </div>
 
     <div class="controls">
       <button id="on-btn" onclick="turnOn()">Acender</button>
-      <button id="off-btn" onclick="turnOff()">Apagar</button>
-      <button id="replace-btn" onclick="replaceLamp()">Trocar Lâmpada</button>
+      <button id="off-btn" onclick="turnOff()" disabled>Apagar</button>
+      <button id="replace-btn" onclick="replaceLamp()" disabled>Trocar Lâmpada</button>
     </div>
-
   </div>
 
   <footer>
-      <a>Atividade Somativa 01 - Projeto Fácil</a>
+    <a>Atividade Somativa 01 - Projeto Fácil</a>
   </footer>
 
 </section>
 
-</body>
 <script src="script.js"></script>
+</body>
 </html>
