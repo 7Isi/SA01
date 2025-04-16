@@ -1,124 +1,140 @@
-/* Reset de margens, preenchimentos e ajuste do box-sizing */
+/* Reset básico e organização do layout */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Garante que padding/border não quebrem o layout */
 }
 
-/* Estilo geral do fundo e layout */
+/* Estilo do corpo da página */
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #095741, #8ff4b3); /* Gradiente de fundo */
+  background: linear-gradient(135deg, #095741, #8ff4b3); /* Gradiente bonito */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   color: #fff;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 20px;
 }
 
-/* Contêiner principal */
+/* Container principal do cronômetro */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  width: 350px;
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.75); /* Fundo escuro com transparência */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+  max-width: 400px;
+  width: 100%;
 }
 
-/* Estilo do título */
+/* Título principal */
 h1 {
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: #fff;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 3px 3px 10px rgba(0, 255, 200, 0.4); /* Efeito neon leve */
 }
 
-/* Estilo do cronômetro */
+/* Estilo do relógio do cronômetro */
 #clock {
-  background-color: #222;
+  background-color: #1a1a1a;
   padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px #00ffaa50; /* Brilho interno */
+  animation: pulse 2s infinite; /* Animação de pulsar */
 }
 
 /* Exibição do tempo */
 #time-display {
   font-size: 4rem;
-  color: #fff;
-  letter-spacing: 2px;
+  color: #00ffcc;
+  text-shadow: 0 0 12px #00ffc3; /* Efeito glow */
 }
 
-/* Status do cronômetro */
+/* Status: Pausado ou Rodando */
 #status {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  padding: 8px 50px;
+  border-radius: 10px;
+  background-color: #42c6ddb2; /* Azul claro */
+  color: #000;
 }
 
-/* Estilo dos botões */
+#status.running {
+  background-color: #00cc66a9; /* Verde quando rodando */
+  color: #fff;
+}
+
+/* Botões principais */
 .controls button,
 #lap-btn {
   padding: 12px 20px;
   font-size: 1.1rem;
-  background-color: #2252ba;
-  color: #fff;
-  border: none;
+  font-weight: bold;
+  background: linear-gradient(to right, #2252ba, #00c2ff); /* Gradiente moderno */
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 5px;
+  transition: all 0.3s ease;
 }
 
-/* Efeito de hover nos botões */
 .controls button:hover,
 #lap-btn:hover {
-  background-color: #77c5ac;
+  background: linear-gradient(to right, #77c5ac, #00ffc8); /* Hover com destaque */
   transform: scale(1.05);
 }
 
-/* Efeito de clique nos botões */
 .controls button:active,
 #lap-btn:active {
-  background-color: #7d769d;
-  transform: scale(0.95);
+  transform: scale(0.95); /* Feedback ao clicar */
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Estilo da área de voltas */
+/* Seção de voltas */
 #lap-container {
   margin-top: 30px;
 }
 
-/* Lista de voltas */
 #lap-list {
   margin-top: 20px;
-  padding: 0;
   list-style-type: none;
 }
 
-/* Estilo para cada item da lista de voltas */
+/* Estilo para cada volta adicionada */
 #lap-list li {
   font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 5px;
+  color: #ffffff;
+  border-bottom: 1px dashed #00ffc8; /* Linha pontilhada */
+  animation: fadeIn 0.5s forwards; /* Efeito de entrada suave */
 }
 
-/* Animação de pulso no cronômetro */
+/* Animação de pulsar (para o relógio) */
 @keyframes pulse {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; }
+  0% { box-shadow: inset 0 0 10px #00ffaa33; }
+  50% { box-shadow: inset 0 0 20px #00ffaa88; }
+  100% { box-shadow: inset 0 0 10px #00ffaa33; }
 }
 
-/* Aplica animação de pulso ao cronômetro */
-#clock {
-  animation: pulse 2s infinite;
+/* Animação de fade-in (para voltas) */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  #time-display {
+    font-size: 3rem; /* Reduz o tamanho do tempo para caber melhor */
+  }
+
+  .controls button,
+  #lap-btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
 }
