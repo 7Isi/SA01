@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cronômetro Interativo</title>
-  
-  <!-- Fonte Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Contêiner principal -->
   <div class="container">
+    <h1>Cronômetro Interativo</h1>
+    <div id="status" aria-label="Status do cronômetro">Pausado</div>
+    <div class="timer-container"> 
 
-      <h1>Cronômetro Interativo</h1>
-    
-    <!-- Cronômetro e controles -->
-    <div class="timer-container">
-    
-      
-      <!-- Exibição do cronômetro -->
-      <div id="clock">
-        <h2 id="time-display">00:00</h2>
+      <!-- Visor principal onde o tempo é mostrado (min:seg.centésimos) -->
+      <div id="clock" aria-label="Tempo atual do cronômetro">
+        <h2 id="time-display">00:00.00</h2>
       </div>
-
-      <div id="status">Pausado</div>
-      
-      <!-- Botões -->
       <div class="controls">
-        <button id="start-pause" onclick="startStopTimer()">Iniciar</button>
+        <!-- Botão para iniciar ou pausar o cronômetro -->
+        <button id="start-stop" onclick="startStopTimer()">Iniciar</button>
+        <!-- Botão para resetar o tempo e limpar as voltas -->
         <button id="clean" onclick="resetTimer()">Reiniciar</button>
       </div>
 
-      <!-- Voltas -->
+      <!-- Área que gerencia as voltas (laps) -->
       <div id="lap-container">
+
+        <!-- Botão para adicionar uma nova volta -->
         <button id="lap-btn" onclick="addLap()">Adicionar Volta</button>
-        <div id="lap-list"></div>
+
+        <!-- Lista onde cada volta registrada é exibida -->
+        <ul id="lap-list" aria-label="Lista de voltas"></ul>
       </div>
     </div>
   </div>
 
+  <!-- Importa o JavaScript que contém toda a lógica do cronômetro -->
   <script src="script.js"></script>
 </body>
 </html>
