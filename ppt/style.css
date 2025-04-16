@@ -48,7 +48,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #ff7f50;
+  color: #aaf5ff;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -112,7 +112,7 @@ h1 {
 button {
   padding: 15px 25px;
   font-size: 1.3rem;
-  background-color: #ff6f61;
+  background-color: #6193ff;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -122,37 +122,20 @@ button {
 }
 
 button:hover {
-  background-color: #ff9b7a;
+  background-color: #7aceff;
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-  background-color: #ff5722;
+  background-color: #228dff;
   transform: scale(0.95);
-}
-
-button:disabled {
-  background-color: #c3ccc8bf;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-/* Modo claro e escuro */
-body.light-mode {
-  background: linear-gradient(135deg, #fbd3e2, #d0e4c5);
-  color: #333;
-}
-
-body.dark-mode {
-  background: linear-gradient(135deg, #0b4f71, #1d3c5a);
-  color: #fff;
 }
 
 /* Rodapé */
 footer {
-  margin-top: 30px;
-  font-size: 0.9rem;
+  margin-top: 50px;
+  font-size: 0.96rem;
   color: #ccc;
 }
 
