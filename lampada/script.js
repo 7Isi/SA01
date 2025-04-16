@@ -1,7 +1,4 @@
 const lampImg = document.getElementById('lamp-img');
-const onSound = document.getElementById('on-sound');
-const offSound = document.getElementById('off-sound');
-const breakSound = document.getElementById('break-sound');
 
 let isLampOn = false;
 let isLampBroken = false;
@@ -19,7 +16,7 @@ function turnOn() {
 
   // Altera o fundo para branco
   document.body.style.backgroundColor = "#ffffff";
-  document.body.style.color = "#000000";
+  document.body.style.color = "#2e2f40";
 
   if (toggleCount >= 7) {
     breakLamp();
@@ -41,7 +38,7 @@ function turnOff() {
   isLampOn = false;
 
   // Altera o fundo para preto
-  document.body.style.backgroundColor = "#000000";
+  document.body.style.backgroundColor = "#2e2f40";
   document.body.style.color = "#ffffff";
 
   document.getElementById('on-btn').disabled = false;
