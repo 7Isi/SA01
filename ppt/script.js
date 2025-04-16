@@ -7,9 +7,7 @@ const userScoreText = document.getElementById('user-score');
 const computerScoreText = document.getElementById('computer-score');
 const computerChoiceImg = document.getElementById('computer-choice-img'); // Imagem da escolha do computador
 
-const winSound = new Audio('win.mp3');
-const loseSound = new Audio('lose.mp3');
-const drawSound = new Audio('draw.mp3');
+
 
 // Função para jogar
 function play(userChoice) {
