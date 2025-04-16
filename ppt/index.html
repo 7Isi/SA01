@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedra / Papel / Tesoura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+
+    <h1>Pedra / Papel / Tesoura</h1>
+  <div class="game-container">
+
+    <!-- Placar -->
+    <div class="score-container">
+      <h2 id="score">Você: <span id="user-score">0</span> | Computador: <span id="computer-score">0</span></h2>
+    </div>
+
+    <div class="game-info">
+      <h2 id="result">Faça sua escolha</h2>
+      <p>Escolha do computador: <span id="computer-choice">?</span></p>
+    </div>
+
+    <!-- Escolhas de Jogo -->
+    <div class="choices-container">
+      <div class="choice">
+        <button onclick="play('pedra')" class="choice-btn">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgHg53ls2b7VCc8NYFULqgEbEbvlnJI3rGnQ&s" alt="Pedra" />
+        </button>
+      </div>
+      <div class="choice">
+        <button onclick="play('papel')" class="choice-btn">
+          <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" alt="Papel" />
+        </button>
+      </div>
+      <div class="choice">
+        <button onclick="play('tesoura')" class="choice-btn">
+          <img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" alt="Tesoura" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Botões de controle -->
+    <div class="game-buttons">
+      <button id="reset-btn" onclick="resetGame()" class="reset-btn">Reiniciar Jogo</button>
+    </div>
+
+  </div>
+
+  <footer>
+    <a>Atividade Somativa 01 - Projeto Difício</a>
+  </footer>
+
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>

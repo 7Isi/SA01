@@ -1,0 +1,124 @@
+/* Reset de margens, preenchimentos e ajuste do box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do fundo e layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #095741, #8ff4b3); /* Gradiente de fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contêiner principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  transition: all 0.3s ease;
+}
+
+/* Estilo do título */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo do cronômetro */
+#clock {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Exibição do tempo */
+#time-display {
+  font-size: 4rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* Status do cronômetro */
+#status {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos botões */
+.controls button,
+#lap-btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  background-color: #2252ba;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+
+/* Efeito de hover nos botões */
+.controls button:hover,
+#lap-btn:hover {
+  background-color: #77c5ac;
+  transform: scale(1.05);
+}
+
+/* Efeito de clique nos botões */
+.controls button:active,
+#lap-btn:active {
+  background-color: #7d769d;
+  transform: scale(0.95);
+}
+
+/* Estilo da área de voltas */
+#lap-container {
+  margin-top: 30px;
+}
+
+/* Lista de voltas */
+#lap-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Estilo para cada item da lista de voltas */
+#lap-list li {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+/* Animação de pulso no cronômetro */
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Aplica animação de pulso ao cronômetro */
+#clock {
+  animation: pulse 2s infinite;
+}
