@@ -8,7 +8,7 @@ const userScoreText = document.getElementById('user-score');
 const computerScoreText = document.getElementById('computer-score'); 
 const computerChoiceImg = document.getElementById('computer-choice-img'); // Imagem da escolha do computador
 
-// Função que é chamada quando o usuário faz uma escolha
+
 function play(userChoice) {
   const computerChoice = getComputerChoice(); // Obtém a escolha do computador
 
