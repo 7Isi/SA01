@@ -1,7 +1,4 @@
 const lampImg = document.getElementById('lamp-img');
-const onSound = document.getElementById('on-sound');
-const offSound = document.getElementById('off-sound');
-const breakSound = document.getElementById('break-sound');
 
 let isLampOn = false;
 let isLampBroken = false;
