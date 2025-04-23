@@ -1,15 +1,16 @@
 let timer;                         // Armazena o ID do setInterval, usado para iniciar/parar o cronômetro
 let totalCentiseconds = 0;        // Contador de centésimos de segundo (1 segundo = 100 centésimos)
+//booleanas \|/
 let isRunning = false;            // Controla o estado do cronômetro (ativo ou pausado)
 let laps = [];                    // Lista para armazenar os tempos das voltas
 let lastLapCentiseconds = 0;      // Armazena o tempo acumulado no momento da última volta
 
 // ==========================
 // Inicia ou pausa o cronômetro
-// ==========================
+// ==========================a
 function startStopTimer() {
   const statusEl = document.getElementById("status"); // Elemento que exibe o estado do cronômetro
-
+    //booleana \|/
   if (isRunning) {
     clearInterval(timer);             // Pausa o cronômetro interrompendo o setInterval
     statusEl.innerText = "Pausado";   // Atualiza o texto do status
@@ -109,6 +110,6 @@ document.addEventListener('keydown', (e) => {
 // ==========================
 // Formata os números para dois dígitos (ex: 03)
 // ==========================
-function formatTime(unit) {
+function formatTime(unit) {  //operador ternario
   return unit < 10 ? `0${unit}` : unit; // Retorna sempre dois dígitos (ex: "03" em vez de "3")
 }
