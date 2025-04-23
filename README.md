@@ -66,8 +66,8 @@ Este projeto é uma aplicação web composta por três módulos distintos: um cr
 
 ## Tecnologias Utilizadas
 
-- HTML5 para estrutura da página.
-- CSS3 para estilos visuais e responsividade.
-- JavaScript (vanilla) para a lógica de controle e interações.
-- Recursos visuais (imagens) externos para melhorar a experiência do usuário.
+- HTML para estrutura da página.
+- CSS para estilos visuais e responsividade.
+- JavaScript para a lógica de controle e interações.
+- Recursos visuais externos para melhorar a experiência do usuário.
 

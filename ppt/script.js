@@ -1,6 +1,6 @@
 let userScore = 0; // Pontuação do usuário
 let computerScore = 0; // Pontuação do computador
-const winningScore = 15; // Pontuação necessária para ganhar o jogo
+const winningScore = 5; // Pontuação necessária para ganhar o jogo
 
 // Obtendo os elementos do DOM que serão usados para exibir o resultado e o placar
 const resultText = document.getElementById('result');
@@ -37,9 +37,11 @@ function play(userChoice) {
   // Verifica se alguém alcançou a pontuação de vitória
   if (userScore >= winningScore) {
     resultText.innerText = 'Você ganhou o jogo!'; // O usuário ganhou o jogo
+    alert ("Você ganhou o jogo!!")
     resetGame(); // Reinicia o jogo
   } else if (computerScore >= winningScore) {
     resultText.innerText = 'O computador ganhou o jogo!'; // O computador ganhou o jogo
+    alert ("O Computador ganhou o jogo!!")
     resetGame(); // Reinicia o jogo
   }
 }
