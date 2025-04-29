@@ -52,22 +52,32 @@ Este projeto é uma aplicação web composta por três módulos distintos: um cr
 
 - Jogador escolhe entre pedra, papel ou tesoura.
 - O computador gera uma escolha aleatória com distribuição personalizada.
+
 - Sistema de pontuação até 15 pontos para definir o vencedor.
 - Exibição da escolha do computador com imagem correspondente.
+
+- Sistema de pontuação até 15 pontos para definir o vencedor.
+- Exibição da escolha do computador com imagem correspondente.
+- Sons diferentes para vitória, derrota e empate.
+
 
 ### Desafios Enfrentados
 
 - Implementação de lógica de jogo justa com variação probabilística para o computador.
 - Atualização do placar e reinício automático após alcançar o limite de pontos.
+
 - Gerenciamento de feedback visual com base nos resultados.
+
+- Gerenciamento de feedback visual com base nos resultados.
+
 - Evitar repetições visuais e lógicas nas escolhas do computador.
 
 ---
 
 ## Tecnologias Utilizadas
 
-- HTML para estrutura da página.
-- CSS para estilos visuais e responsividade.
-- JavaScript para a lógica de controle e interações.
-- Recursos visuais externos para melhorar a experiência do usuário.
+- HTML5 para estrutura da página.
+- CSS3 para estilos visuais e responsividade.
+- JavaScript (vanilla) para a lógica de controle e interações.
+- Recursos visuais (imagens) externos para melhorar a experiência do usuário.
 
